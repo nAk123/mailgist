@@ -1,0 +1,22 @@
+<GateDocument> 
+  <GateDocumentFeatures>
+    ...
+  </GateDocumentFeatures>
+  <TextWithNodes>
+    <Node id="0"/>
+    MESSAGE SET
+    <Node id="19"/> 
+    <Node id="20"/>
+    1. 1/1/09 - sample text 1
+    <Node id="212"/>
+    sample text 2
+    <Node id="223"/>
+    sample text 3
+    ...
+    <Node id="160652"/>
+  </TextWithNodes>
+  <AnnotationSet></AnnotationSet>
+  <AnnotationSet Name="SomeName">
+    ...
+  </AnnotationSet>
+</GateDocument>

@@ -1,0 +1,118 @@
+<root>
+  <thread>
+    <name>Extending IETF meetings to two weeks?</name>
+    <listno>007-7484738</listno>
+    <DOC>
+      <Received>Tue Dec 08 07:30:52 -0800 1998</Received>
+      <From>Jacob Palme &lt;jpalme@dsv.su.se&gt;</From>
+      <To>discuss@apps.ietf.org</To>
+      <Subject>Extending IETF meetings to two weeks?</Subject>
+      <Text>
+        <Sent id="1.1">The IETF meetings tend to become too large, creating logistics and planning problems. </Sent>
+        <Sent id="1.2">I suggest that future meetings are held for two weeks, with applications and user services issues the first week, and all other issues the second week. </Sent>
+        <Sent id="1.3">Those who so wish could attend both weeks, and other people could attend only one week. </Sent>
+        <Sent id="1.4">Those who choose to attend both weeks would be able to cover more groups and do better liaisons between the different areas. </Sent>
+        <Sent id="1.5">The Friday of the first week could discuss applications issues which might be of special interest to the other areas, and the Monday of the second week would schedule other groups which might be of special interest to applications people, so some people could attend Monday-Monday or Friday-Friday. 
+</Sent>
+        <Sent id="1.6">------------------------------------------------------------------------ 
+</Sent>
+        <Sent id="1.7">Jacob Palme &amp;lt;jpalme@dsv.su.se&amp;gt; (Stockholm University and KTH) 
+</Sent>
+        <Sent id="1.8">for more info see URL: http://www.dsv.su.se/~jpalme</Sent>
+      </Text>
+    </DOC>
+    <DOC>
+      <Received>Wed Dec 09 20:21:11 -0800 1998</Received>
+      <From>Terry Allen &lt;tallen@sonic.net&gt;</From>
+      <To>discuss@apps.ietf.org,jpalme@dsv.su.se</To>
+      <Subject>Re: Extending IETF meetings to two weeks?</Subject>
+      <Text>
+        <Sent id="2.1">&gt; The IETF meetings tend to become too large, creating logistics and planning problems. ... 
+</Sent>
+        <Sent id="2.2">My problem over the past year or so is that there are only a few session I wish to attend, but I cannot know for sure when they will be scheduled, so I cannot make reasonable travel arrangements (a week in Orlando for 6 hours of meetings is hard to sell to management). </Sent>
+        <Sent id="2.3">Now I know there is a rationale here, and that one is encouraged to participate broadly. </Sent>
+        <Sent id="2.4">And I am hopeful that new activities (my own and in the IETF) will give me many more reasons to attend. 
+</Sent>
+        <Sent id="2.5">But firmer scheduling would be a big win. 
+</Sent>
+        <Sent id="2.6">regards, Terry 
+</Sent>
+        <Sent id="2.7">Terry Allen Electronic Commerce and Publishing Consultant 
+</Sent>
+        <Sent id="2.8">tallen[at]sonic.net 
+</Sent>
+        <Sent id="2.9">http://www.sonic.net/~tallen/ 
+</Sent>
+        <Sent id="2.10">DocBook: http://www.ora.com/davenport/index.html 
+</Sent>
+        <Sent id="2.11">Common Business Library: http://www.veosystems.com/</Sent>
+      </Text>
+    </DOC>
+    <DOC>
+      <Received>Thu Dec 10 07:09:32 -0800 1998</Received>
+      <From>Brian E Carpenter &lt;brian@hursley.ibm.com&gt;</From>
+      <To>Terry Allen &lt;tallen@sonic.net&gt;</To>
+      <Subject>Re: Extending IETF meetings to two weeks?</Subject>
+      <Text>
+        <Sent id="3.1">Terry, 
+</Sent>
+        <Sent id="3.2">WG Chairs already are asked to specify which clashes they want to avoid, but clash avoidance is an iterative problem. </Sent>
+        <Sent id="3.3">I just don't see how late changes can be completely avoided. </Sent>
+        <Sent id="3.4">Obviously, everybody knows they need to be minimised. 
+</Sent>
+        <Sent id="3.5">Jacob, 
+</Sent>
+        <Sent id="3.6">No way. </Sent>
+        <Sent id="3.7">Taking one week out of our calendars 3 times a year is already very painful, and a lot of people really do need and want to track multiple areas of the IETF. </Sent>
+        <Sent id="3.8">Spreading it thinner would be awful. 
+</Sent>
+        <Sent id="3.9">Brian</Sent>
+      </Text>
+    </DOC>
+    <DOC>
+      <Received>Thu Dec 10 11:55:56 -0800 1998</Received>
+      <From>Larry Masinter &lt;masinter@parc.xerox.com&gt;</From>
+      <To>&lt;agenda@ietf.org&gt; , &lt;discuss@apps.ietf.org&gt;</To>
+      <Subject>create 'final' IETF agenda schedule earlier?</Subject>
+      <Text>
+        <Sent id="4.1">Working groups don't seem to decide at the last minute whether or not they need a meeting, or what their conflict avoidance criteria needs to be. </Sent>
+        <Sent id="4.2">This leads me to believe that we could create the IETF schedule earlier without causing significant pain. 
+</Sent>
+        <Sent id="4.3">For example, it would be very useful so that the final WG schedule was available more than 21 days in advance, in order to get advanced purchase tickets. </Sent>
+        <Sent id="4.4">This would mean that the apps area schedule should be set tentatively 30-35 days in advance, so that the draft IETF schedule could be published and conflicts reviewed. 
+</Sent>
+        <Sent id="4.5">Larry</Sent>
+      </Text>
+    </DOC>
+    <DOC>
+      <Received>Fri Dec 11 16:02:06 -0800 1998</Received>
+      <From>Richard Shockey &lt;rshockey@ix.netcom.com&gt;</From>
+      <To>discuss@apps.ietf.org</To>
+      <Subject>Re: create 'final' IETF agenda schedule earlier?</Subject>
+      <Text>
+        <Sent id="5.1">&gt; For example, it would be very useful so that the final WG schedule was available more than 21 days in advance, in order to get advanced purchase tickets. </Sent>
+        <Sent id="5.2">&gt; This would mean that the apps area schedule should be set tentatively 30-35 days in advance, so that the draft IETF schedule could be published and conflicts reviewed. 
+</Sent>
+        <Sent id="5.3">I'd like to second this notion. </Sent>
+        <Sent id="5.4">Many folks in smaller companies are under severe budget constraints and have difficulty justifying participation in IETF meetings. </Sent>
+        <Sent id="5.5">The advance notice helps reduce travel costs, which in turn helps more people attend. 
+</Sent>
+        <Sent id="5.6">It would make my life easier. 
+</Sent>
+        <Sent id="5.7">Richard Shockey 
+</Sent>
+        <Sent id="5.8">Shockey Consulting LLC 
+</Sent>
+        <Sent id="5.9">8045 Big Bend Blvd. Suite 110 
+</Sent>
+        <Sent id="5.10">St. Louis, MO 63119 
+</Sent>
+        <Sent id="5.11">Voice 314.918.9020 
+</Sent>
+        <Sent id="5.12">Fax 314.918.9015 
+</Sent>
+        <Sent id="5.13">INTERNET Mail &amp;amp; IFAX : rshockey@ix.netcom.com</Sent>
+      </Text>
+    </DOC>
+  </thread>
+</root>
