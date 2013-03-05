@@ -5,9 +5,11 @@ from lxml import etree
 
 doc = etree.parse('bc3corpus.1.0/corpus.xml')
 thread_dict = {}
+basic = {}
 names = []
 for thread in doc.xpath('//thread'):
     for name in thread.xpath('name'):
+        l=0
         thread_dict[name.text] = {}
         names.append(name.text)
         for docs in thread.xpath('DOC'):
@@ -18,13 +20,21 @@ for thread in doc.xpath('//thread'):
                 for to in docs.xpath('To'):
                     thread_dict[name.text][subject.text].append(to.text)
                 for t in docs.xpath('Text/Sent'):
-                    thread_dict[name.text][subject.text].append(t.text)
+                    s = t.text
+                    thread_dict[name.text][subject.text].append(s)
+                    basic[s] = []
+                    #Feature in the 0th column is thread_line_num
+                    basic[s].append(l)
+                    l += 1
+                print thread_dict[name.text][subject.text]        
+        print "The basic feature set is \n {0}".format(basic)
+        print "\n"
 #print thread_dict
 
-subject_map={}
-y=0
+subject_map = {}
+y = 0
 for name in names:
-    y = y+1
+    y += 1
     for x in thread_dict[name]:
         try:
             subj_string=','.join(thread_dict[name][x])
@@ -37,6 +47,8 @@ for name in names:
     except TypeError:
         print "Exception occured due to {0}".format(thread_dict[name])
 
+    print "The total content of thread number {0} is".format(y)
+    print subject_map[name]
     print "\nBasic analysis for thread number {0}".format(y)
     text1 = subject_map[name]
     #Tokenize text
