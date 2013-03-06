@@ -5,17 +5,16 @@ from lxml import etree
 
 def read_xml():
     thread_dict = {}
-    s_features = {}
+    basic = {}
+    #names = []
     doc = etree.parse('bc3corpus.1.0/corpus.xml')
     for thread in doc.xpath('//thread'):
         for name in thread.xpath('name'):
             l=0
             thread_dict[name.text] = {}
-            s_features[name.text] = {}
             #names.append(name.text)
             for docs in thread.xpath('DOC'):
                 for subject in docs.xpath('Subject'):
-                    basic = {}
                     thread_dict[name.text].setdefault(subject.text, [])
                     for Recv in docs.xpath('From'):
                         thread_dict[name.text][subject.text].append(Recv.text)
@@ -35,13 +34,10 @@ def read_xml():
                         else:
                             basic[s].append(0)
                         l += 1
-                    print thread_dict[name.text][subject.text]
-            s_features[name.text] = basic        
-            print "The basic feature set is \n {0}".format(s_features[name.text])
+                    print thread_dict[name.text][subject.text]        
+            print "The basic feature set is \n {0}".format(basic)
             print "\n"
-            count = l
-            print count
-    return thread_dict, s_features, count 
+    return thread_dict, basic
 
 def print_Stats(t_dict):
     subject_map = {}
