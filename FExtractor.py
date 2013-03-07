@@ -1,3 +1,4 @@
+from __future__ import division
 import BasicStats as bs
 
 '''
@@ -15,6 +16,7 @@ def s_extractor(s_features, count):
 def main():
     thread_dict, s_features, count = bs.read_xml()
     #bs.print_Stats(thread_dict)
+    print "Entering the sentence extractor"
     s_extractor(s_features, count)
 
 if __name__ == '__main__':

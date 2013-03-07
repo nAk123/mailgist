@@ -9,38 +9,39 @@ def read_xml():
     doc = etree.parse('bc3corpus.1.0/corpus.xml')
     for thread in doc.xpath('//thread'):
         for name in thread.xpath('name'):
-            l=0
-            thread_dict[name.text] = {}
-            s_features[name.text] = {}
+            l = 0
+            n = name.text
+            thread_dict[n] = {}
+            s_features[n] = {}
             #names.append(name.text)
             for docs in thread.xpath('DOC'):
                 for subject in docs.xpath('Subject'):
-                    basic = {}
-                    thread_dict[name.text].setdefault(subject.text, [])
+                    thread_dict[n].setdefault(subject.text, [])
                     for Recv in docs.xpath('From'):
-                        thread_dict[name.text][subject.text].append(Recv.text)
+                        thread_dict[n][subject.text].append(Recv.text)
                     for to in docs.xpath('To'):
-                        thread_dict[name.text][subject.text].append(to.text)
+                        thread_dict[n][subject.text].append(to.text)
                     for t in docs.xpath('Text/Sent'):
                         s = t.text
-                        thread_dict[name.text][subject.text].append(s)
-                        basic[s] = []
+                        thread_dict[n][subject.text].append(s)
+                        s_features[n][s] = []
                         #Feature in the 0th column is thread_line_num
-                        basic[s].append(l)
+                        s_features[n][s].append(l)
                         #1st column feature - t_rel_pos
-                        basic[s].append(len(s))
+                        s_features[n][s].append(len(s))
                         #2nd column conatins is Question
                         if '?' in s:
-                            basic[s].append(1)
+                            s_features[n][s].append(1)
                         else:
-                            basic[s].append(0)
+                            s_features[n][s].append(0)
                         l += 1
                     print thread_dict[name.text][subject.text]
-            s_features[name.text] = basic        
-            print "The basic feature set is \n {0}".format(s_features[name.text])
-            print "\n"
+            #s_features[name.text] = basic        
+            print "The basic feature set is {0}".format(s_features[n])
             count = l
+            print "The total number of sentences are"
             print count
+            print "\n"
     return thread_dict, s_features, count 
 
 def print_Stats(t_dict):
