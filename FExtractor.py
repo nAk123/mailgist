@@ -1,9 +1,3 @@
-from __future__ import division
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-import BasicStats as bs
-import nltk
-
 '''
 The structure of the sentence feature set basic is as follows
 [t_line_num, length, isQuestion, t_rel_pos]
@@ -14,6 +8,12 @@ And sklearn is just amazing - use it!
 Combine it with nltk and you have someone you really LOVE.
 (or is it someone that really loves YOU)
 '''
+
+from __future__ import division
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+import BasicStats as bs
+import nltk
 
 def s_extractor(s_features, count):
     for name in s_features:
@@ -35,12 +35,17 @@ def tfidf_score(train_set, test_set):
     tfidf.fit(smatrix)
     print "IDF scores:", tfidf.idf_
     tf_idf_matrix = tfidf.transform(smatrix)
+    pairwise_similarity = tf_idf_matrix * tf_idf_matrix.T
     msum = tf_idf_matrix.sum(axis=1)
+    cos_sum = pairwise_similarity.sum(axis=1)
     mlist = msum.tolist()
+    cos_sim = cos_sum.tolist()
     count = 0
     tfidfscores = {}
     for s in train_set:
-        tfidfscores[s] = mlist[count][0]
+        tfidfscores[s] = []
+        tfidfscores[s].append(mlist[count][0])
+        tfidfscores[s].append(cos_sim[count][0])
         count += 1
     return tfidfscores
 
