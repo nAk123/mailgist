@@ -36,13 +36,13 @@ def read_xml():
                             s_features[n][s].append(0)
                         l += 1
                     print thread_dict[name.text][subject.text]
-            #s_features[name.text] = basic        
+            #s_features[name.text] = basic
             print "The basic feature set is {0}".format(s_features[n])
             count = l
             print "The total number of sentences are"
             print count
             print "\n"
-    return thread_dict, s_features, count 
+    return thread_dict, s_features, count
 
 def print_Stats(t_dict):
     subject_map = {}

@@ -29,11 +29,11 @@ def tfidf_score(train_set, test_set):
     train_set = filter(None, train_set)
     test_set = filter(None, test_set)
     vectorizer.fit_transform(train_set)
-    print "Word Index is {0} \n".format(vectorizer.vocabulary_)
+    #print "Word Index is {0} \n".format(vectorizer.vocabulary_)
     smatrix = vectorizer.transform(test_set)
     tfidf = TfidfTransformer(norm="l2")
     tfidf.fit(smatrix)
-    print "IDF scores:", tfidf.idf_
+    #print "IDF scores:", tfidf.idf_
     tf_idf_matrix = tfidf.transform(smatrix)
     pairwise_similarity = tf_idf_matrix * tf_idf_matrix.T
     msum = tf_idf_matrix.sum(axis=1)
@@ -53,13 +53,31 @@ def main():
     thread_dict, s_features, count = bs.read_xml()
     #bs.print_Stats(thread_dict)
     s_msgscore = {}
+    basic_plus = {}
     for name in thread_dict:
-        s_msgscore[name] = []
+        s_msgscore[name] = {}
+        temp = []
+        t3 = []
         for subject in thread_dict[name]:
-            print "The message being ripped is {0} \n".format(thread_dict[name][subject])
-            s_msgscore[name].append(tfidf_score(thread_dict[name][subject], thread_dict[name][subject]))
-        print "Sentence score/message is {0} \n".format(s_msgscore[name])
+            #print "The message being ripped is {0} \n".format(thread_dict[name][subject])
+            t1 = tfidf_score(thread_dict[name][subject], thread_dict[name][subject])
+            s_msgscore[name] = dict(s_msgscore[name].items() + t1.items())
+            #print thread_dict[name][subject]
+            thread_dict[name][subject] = filter(None, thread_dict[name][subject])
+            t3.append(' '.join(thread_dict[name][subject]))
+            temp += thread_dict[name][subject]
+        #print "List of sentences in thread are \n {0}".format(temp)
+        t2 = tfidf_score(temp, temp)
+        for s in s_msgscore[name]:
+            s_msgscore[name][s] += t2[s]
+        print "The paragraph list is \n {0}".format(t3)
+        t4 = tfidf_score(t3, t3)
+        basic_plus = dict(basic_plus.items() + t4.items())
+        #print "Sentence score/message is {0} \n".format(s_msgscore[name])
     s_features = s_extractor(s_features, count)
+    print s_features
+    print s_msgscore
+    print basic_plus
 
 if __name__ == '__main__':
     main()
