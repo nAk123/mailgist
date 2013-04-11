@@ -16,6 +16,7 @@ import BasicStats as bs
 import nltk
 
 def s_extractor(s_features, count):
+
     for name in s_features:
         for s in s_features[name]:
             l = s_features[name][s][0]
@@ -23,6 +24,7 @@ def s_extractor(s_features, count):
     return s_features
 
 def tfidf_score(train_set, test_set):
+
     stopwords = nltk.corpus.stopwords.words('english')
     vectorizer = TfidfVectorizer(min_df=1, stop_words=set(stopwords))
     #Remove all the None Types from the input datasets
@@ -49,7 +51,24 @@ def tfidf_score(train_set, test_set):
         count += 1
     return tfidfscores
 
+def kw_extractor(text):
+
+    import Cloudie as wc
+    from topia.termextract import extract
+
+    print text
+    extractor = extract.TermExtractor()
+    x = extractor.tagger
+    extractor = extract.TermExtractor(x)
+    extractor.filter = extract.DefaultFilter(singleStrengthMinOccur=2)
+    terms = extractor(text)
+    print terms
+    keywords = [term for term in terms if term[0].isalpha()]
+    print keywords
+    wc.init_cloud(keywords)
+
 def main():
+
     thread_dict, s_features, count = bs.read_xml()
     #bs.print_Stats(thread_dict)
     s_msgscore = {}
@@ -70,14 +89,17 @@ def main():
         t2 = tfidf_score(temp, temp)
         for s in s_msgscore[name]:
             s_msgscore[name][s] += t2[s]
-        print "The paragraph list is \n {0}".format(t3)
+        #print "The paragraph list is \n {0}".format(t3)
         t4 = tfidf_score(t3, t3)
         basic_plus = dict(basic_plus.items() + t4.items())
         #print "Sentence score/message is {0} \n".format(s_msgscore[name])
+        #Summarize using topia extractor
+        print "Entering the extractor"
+        kw_extractor(" ".join(t3))
     s_features = s_extractor(s_features, count)
-    print s_features
-    print s_msgscore
-    print basic_plus
+    #print s_features
+    #print s_msgscore
+    #print basic_plus
 
 if __name__ == '__main__':
     main()
