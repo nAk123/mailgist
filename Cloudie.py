@@ -16,7 +16,7 @@ from query_integral_image import query_integral_image
 
 FONT_PATH = "/usr/share/fonts/truetype/ttf-japanese-gothic.ttf"
 
-def make_wordcloud(words, counts, fname, width=400, height=200,
+def make_wordcloud(words, counts, fname, width=800, height=400,
                            margin=5, ranks_only=False):
 
     if len(counts) <= 0:

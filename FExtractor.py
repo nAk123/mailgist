@@ -51,6 +51,22 @@ def tfidf_score(train_set, test_set):
         count += 1
     return tfidfscores
 
+def checker(t):
+    if '@' in t:
+        return False
+    elif '?' in t:
+        return False
+    elif '\'' in t:
+        return False
+    elif '\"' in t:
+        return False
+    elif '>>' in t:
+        return False
+    elif '>' in t:
+        return False
+    else:
+        return True
+
 def kw_extractor(text):
 
     import Cloudie as wc
@@ -61,9 +77,11 @@ def kw_extractor(text):
     x = extractor.tagger
     extractor = extract.TermExtractor(x)
     extractor.filter = extract.DefaultFilter(singleStrengthMinOccur=2)
+    text.strip('>')
+    text.strip('>>')
     terms = extractor(text)
     print terms
-    keywords = [term for term in terms if term[0].isalpha()]
+    keywords = [term for term in terms if checker(term[0])]
     print keywords
     wc.init_cloud(keywords)
 

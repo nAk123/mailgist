@@ -17,10 +17,10 @@ def read_xml():
             for docs in thread.xpath('DOC'):
                 for subject in docs.xpath('Subject'):
                     thread_dict[n].setdefault(subject.text, [])
-                    for Recv in docs.xpath('From'):
-                        thread_dict[n][subject.text].append(Recv.text)
-                    for to in docs.xpath('To'):
-                        thread_dict[n][subject.text].append(to.text)
+                    #for Recv in docs.xpath('From'):
+                    #    thread_dict[n][subject.text].append(Recv.text)
+                    #for to in docs.xpath('To'):
+                    #    thread_dict[n][subject.text].append(to.text)
                     for t in docs.xpath('Text/Sent'):
                         s = t.text
                         thread_dict[n][subject.text].append(s)
